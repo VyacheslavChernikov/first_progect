@@ -4,21 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Генеосфера</title>
+
+  <!-- Open Graph / Telegram / Facebook -->
+  <meta property="og:title" content="Генеосфера — цифровая платформа для восстановления родовых связей">
+  <meta property="og:description" content="Создавайте родовые древа, находите архивы, восстанавливайте историю семьи.">
+  <meta property="og:image" content="https://vyacheslavchernikov.github.io/geneosphere-site/preview.jpg">
+  <meta property="og:url" content="https://vyacheslavchernikov.github.io/geneosphere-site/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter (используется в Telegram тоже) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Генеосфера">
+  <meta name="twitter:description" content="Цифровая платформа для восстановления родовых связей, истории и здоровья.">
+  <meta name="twitter:image" content="https://vyacheslavchernikov.github.io/geneosphere-site/preview.jpg">
+
   <style>
-.join-btn {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.75rem 1.5rem;
-  background-color: #4a4aff;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-.join-btn:hover {
-  background-color: #3636e0;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: "Segoe UI", sans-serif;
@@ -27,77 +30,131 @@
       background: #f9f9fb;
       color: #2c2c2c;
     }
+
     header {
       background: #6e78ff;
       color: white;
       padding: 2rem 1rem;
       text-align: center;
     }
+
     header h1 {
       margin: 0;
       font-size: 2.5rem;
     }
+
     header p {
       margin-top: 0.5rem;
       font-size: 1.2rem;
     }
+
+    .join-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #4a4aff;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .join-btn:hover {
+      background-color: #3636e0;
+    }
+
     section {
       max-width: 800px;
       margin: 2rem auto;
       padding: 0 1rem;
     }
+
     h2 {
       color: #4a4aff;
     }
+
     ul {
       list-style-type: "🧩 ";
       padding-left: 1.5rem;
     }
+
     footer {
       text-align: center;
       padding: 1rem;
       font-size: 0.9rem;
       color: #777;
     }
+
     .role-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1rem;
     }
+
     .card {
       background: white;
       border: 1px solid #ddd;
       padding: 1rem;
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
     @media (max-width: 600px) {
       .role-grid {
         grid-template-columns: 1fr;
       }
     }
-  </style>
-<!-- Open Graph / Telegram / Facebook -->
-<meta property="og:title" content="Генеосфера — цифровая платформа для восстановления родовых связей">
-<meta property="og:description" content="Создавайте родовые древа, находите архивы, восстанавливайте историю семьи.">
-<meta property="og:image" content="https://vyacheslavchernikov.github.io/geneosphere-site/preview.jpg">
-<meta property="og:url" content="https://vyacheslavchernikov.github.io/geneosphere-site/">
-<meta property="og:type" content="website">
 
-<!-- Twitter (используется в Telegram тоже) -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Генеосфера">
-<meta name="twitter:description" content="Цифровая платформа для восстановления родовых связей, истории и здоровья.">
-<meta name="twitter:image" content="https://vyacheslavchernikov.github.io/geneosphere-site/preview.jpg">
+    /* Тёмная тема */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #121212;
+        color: #e0e0e0;
+      }
+      header {
+        background: #1e1e1e;
+        color: white;
+      }
+      .card {
+        background: #1f1f1f;
+        border-color: #333;
+      }
+      footer {
+        background: #1a1a1a;
+        color: #aaa;
+      }
+    }
+
+    /* Анимация появления */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>Генеосфера</h1>
-    <p>Цифровая платформа для восстановления родовых связей, истории и здоровья</p><a href="https://t.me/Pozitive_Web3" target="_blank" class="join-btn">Присоединиться к сообществу</a>
-
+    <p>Цифровая платформа для восстановления родовых связей, истории и здоровья</p>
+    <a href="https://t.me/Pozitive_Web3" target="_blank" class="join-btn">Присоединиться к сообществу</a>
   </header>
 
-  <section>
+  <section class="fade-in">
     <h2>Кто участвует</h2>
     <div class="role-grid">
       <div class="card"><strong>Генеалоги</strong><br/>Создают родовые древа</div>
@@ -109,7 +166,7 @@
     </div>
   </section>
 
-  <section>
+  <section class="fade-in">
     <h2>Что умеет платформа</h2>
     <ul>
       <li>Интерактивное родовое древо</li>
